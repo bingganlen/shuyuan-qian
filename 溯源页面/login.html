@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+		<title>登录</title>
+		<link rel="stylesheet" href="lib/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/login.css" />
+		<link rel="stylesheet" type="text/css" href="css/verify.css">
+	</head>
+
+	<body class="beg-login-bg" background="images/bg.jpg">
+		<div class="beg-login-box">
+			
+			<header>
+				<h1>欢迎登录</h1>
+			</header>
+			<div class="beg-login-main">
+				<form action="/user/login.do" class="layui-form" method="post" onsubmit="return login()">
+                <div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe612;</i>
+                    </label>
+					</div>
+                <!---->
+                    <div class="error-item">
+                       <i class="fa fa-minus-circle error-icon"></i>
+                       <p class="err-msg">Error</p>
+                    </div>
+					<div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe612;</i>
+                    </label>
+						<input type="text" name="username" id="username" lay-verify="userName" autocomplete="off" placeholder="请输入登录名" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<label class="beg-login-icon">
+                        <i class="layui-icon">&#xe642;</i>
+                    </label>
+						<input type="password" name="password" id="password" lay-verify="password" autocomplete="off" placeholder="请输入密码" class="layui-input">
+					</div>
+					<div class="layui-form-item">
+						<div class="beg-pull-left beg-login-remember">
+							<span><a href="/user/forget_reset_password.do">忘记密码？</a></span>
+						</div>
+						<!-- 原登录位置 -->
+						<div class="beg-pull-right">
+                            <a href="/user/register.do">注册新用户</a>
+						</div>
+						<!-- <a class="link" href="./user-pass-reset.html"></a>   ./user-register.html -->
+					</div>
+            
+					<div class="login">
+							<button class="layui-btn layui-btn-primary" lay-submit lay-filter="login" id="but" >
+                             登录
+                             <!-- onblur="showSign()" <i class="layui-icon">&#xe650;</i>-->
+                            </button>
+					</div>
+				</form>
+				<div class="huadong" style=" display: none;" ><!-- display: none;   margin-top:50px;--></div>
+			</div>
+			
+
+<!-- <a href="javascript:showSign();" style="display: block;width: 200px;height:40px;color: #fff;background: lightblue;text-align: center;line-height: 40px;margin:0 auto;">点击弹出弹框</a> -->
+
+			<!-- <footer>
+			            <p><a href="../宋加加网页/index.html"><span style="color:#06F">返回首页</span></a></p>
+			</footer> -->
+            
+		</div>
+		<script type="text/javascript" src="lib/layui/layui.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+        <script type="text/javascript" src="js/verify.js" ></script>
+        <script type="text/javascript" src="js/verify.min.js" ></script>
+        
+        <script>
+        	/*function showSign(){
+		        $(".huadong").toggle();
+		    }*/
+
+
+		    $(document).ready(function(e) {
+			    $("#but").mouseover(function(e) {
+			        /*if( $(".huadong").hasClass("show") ){
+			            // 执行隐藏
+			            $(".huadong").hide().removeClass("show");
+			            // 其他
+			        }else{
+			            // 显示
+			            $(".huadong").show().addClass("show");
+			        }*/
+			        $(".huadong").toggle();
+			    });
+
+			/*//必填元素后加红色标记
+			$("form :input.required").each(function(){ 
+  			//创建元素
+  			var $required = $("<strong class='high'>*</strong>");
+  			//将它追加到文档中
+  			$(this).parent().append($required);
+  			var $readyRequired = $("<strong class='onSuccess'>*</strong>");
+ 			});
+
+			    $("form :input").blur(function(){
+				var $parent=$(this).parent();
+				//消除之前的提示信息
+				$parent.find(".msg").remove();
+				//验证用户填写
+				if($(this).is("username"))
+				{
+					if($.trim(this.value)!="")
+					{
+						var okMsg=" 已输入";
+						$parent.find(".high").remove();
+						$parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+					}
+				}
+				if($(this).is("password"))
+				{
+					if($.trim(this.value)!="")
+					{
+						var okMsg=" 已输入";
+						$parent.find(".high").remove();
+						$parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+					}
+				}
+			});
+			});*/
+
+        	$('.huadong').slideVerify({
+		    	type : 2,		//类型
+        		vOffset : 5,	//误差量，根据需求自行调整
+		        vSpace : 5,	//间隔
+		        imgName : ['1.jpg', '2.jpg','3.jpg'],
+		        imgSize : {
+		        	width: '400px',
+		        	height: '200px',
+		        },
+		        blockSize : {
+		        	width: '40px',
+		        	height: '40px',
+		        },
+		        barSize : {
+		        	width : '400px',
+		        	height : '40px',
+		        },
+		        ready : function() {
+		    	},
+		        success : function() {
+		        	alert('验证成功，添加你自己的代码！');
+		        	return true;
+		        },
+		        error : function() {
+		        	alert('验证失败！');
+		        }
+		        
+		    });
+
+
+		    function login(){
+		    	var name = document.getElementById("username");
+		    	var pass = document.getElementById("password");
+                if (name.value.length==0) {
+                	comfirm("用户名不能为空");
+                	return false;
+                }
+                if (pass.value.length==0) {
+                	comfirm("密码不能为空");
+                	return false;
+                }
+
+		    }
+
+		    /*layui.use(['layer', 'form'], function() {
+				var layer = layui.layer,
+					$ = layui.jquery,
+					form = layui.form();
+					
+				form.on('submit(login)',function(data){
+					
+					location.href='index.html';
+					return false;
+				});
+			});*/
+		</script>
+	</body>
+
+</html>
+<!-- 
+不推荐这种，直接前端js解决的就好了
+
+String username = request.getParameter("username");
+String password = request.getParameter("password");
+
+后台
+if(username==""){
+	request.setAttribute("string",'null1');
+	request.getRequestDispatcher("login.jsp").forward(request,response);
+}else if(password==""){
+	request.setAttribute("string",'null2');
+	request.getRequestDispatcher("login.jsp").forward(request,response);
+}
+
+前台 EL
+<c:choose>
+   <c:when test="${string=='null1'}">
+      <script>
+         window.alert("用户名不能为空");
+      </script>
+   </c:when>
+   <c:when test="${string=='null2'}">
+       <script>
+         window.alert("密码不能为空");
+       </script>
+   </c:when>
+</c:choose>
+ -->

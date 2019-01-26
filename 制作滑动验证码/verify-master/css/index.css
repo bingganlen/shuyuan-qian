@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+  }
+    .container {
+      width: 700px;
+      margin: 200px auto;
+    }
+    input {
+      display: block;
+      width: 290px;
+      line-height: 40px;
+      margin: 10px 0;
+      padding: 0 10px;
+      outline: none;
+      border:1px solid #c8cccf;
+      border-radius: 4px;
+      color:#6a6f77;
+    }
+    #msg {
+      width: 100%;
+      line-height: 40px;
+      font-size: 14px;
+      text-align: center;
+    }
+    #total_l{
+      height: 90px;
+      width: 580px;
+      font-size:40px;
+      color: #00F;
+      position:absolute;
+      left: 50%;
+      top: 50%;
+      margin:-100px 0 0 -150px;
+      font-weight: bold;
+    }
