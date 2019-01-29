@@ -1,0 +1,157 @@
+
+
+.beg-login-box {
+	width: 430px;
+	height: 390px;
+	margin: 20% auto;
+	background-color: rgba(255, 255, 255, 255);
+	border-radius: 10px;
+}
+
+.beg-login-box header {
+    height: 39px;
+    padding: 10px;
+    border-bottom: 1px solid aliceblue;
+} 
+
+.beg-login-box header h1 {
+	text-align: center;
+	font-size: 25px;
+	line-height: 40px;
+}
+
+.beg-login-box .beg-login-main {
+    position: relative;
+	height: 195px;
+	padding: 30px 90px 0;
+}
+
+.beg-login-main .layui-form-item {
+	position: relative;
+}
+
+.beg-login-main .layui-form-item .beg-login-icon {
+	position: absolute;
+	color: #000000;
+	top: 10px;
+	left: 10px;
+}
+
+.beg-login-main .layui-form-item input {
+	padding-left: 34px;
+}
+
+.layui-form{
+    position: relative;
+}
+
+
+.beg-login-box footer {
+	height: 35px;
+	padding: 20px 20px 0 20px;
+}
+
+.beg-login-box footer p {
+	line-height: 40px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.beg-pull-left {
+	float: left !important;
+}
+
+.beg-pull-right {
+	float: right !important; 
+	padding: 8px 0 8px 0;
+
+}
+
+
+
+.beg-clear {
+	clear: both;
+}
+
+.beg-login-remember {
+	line-height: 30px;
+}
+
+.beg-login-remember .layui-form-switch {
+	margin-top: 0px;
+}
+
+.beg-login-code-box {
+	position: relative;
+	padding: 0px;
+}
+
+.beg-login-code-box input {
+	position: absolute;
+	width: 100px;
+}
+
+.beg-login-code-box img {
+	cursor: pointer;
+	position: absolute;
+	left: 115px;
+	height: 38px;
+}
+
+ .huadong{
+    position: absolute;
+    left: 0px;
+    top: -10px;
+} 
+
+.error{
+    width: 200px;
+    height: 20px;
+    color: red;
+    font-size: 14px;
+}
+.err{
+    width: 200px;
+    height: 20px;
+}
+.default{
+    font-size: 14px;
+}
+
+
+.message{
+    width: 250px;
+    height: 30px;
+    color:#07c1d2 !important;
+    font-size: 13px !important;
+}
+.messageleft{
+    float: left !important;
+}
+.messageright{
+    float: right !important;
+}
+
+.login{
+    /* width: 200px;
+    height: 50px; */
+    position: absolute;
+    left: 30px;
+   /*  padding: 20px 20px 0 40px;上右下左 */
+    width: 200px;
+    height: 50px;
+}
+.btn{    
+    text-align: center;
+    line-height: 50px;
+    width: 200px;
+    height: 50px;
+    border:1px solid #C9C9C9;background-color:#07c1d2;color:#000;
+    cursor:pointer;
+}
+.btn:hover{border-color:#009688;color:#333}
+
+/* .high{color:red;font-size: 16px;}
+.msg{font-size: 13px;}
+.onError{ color: red; font-size: 16px;}
+.onSuccess{ color: green; font-size: 16px;} */

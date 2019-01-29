@@ -1,0 +1,55 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String username = request.getParameter("username");
+	String password = request.getParameter("password");
+%>
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+	<head>
+		<title>验证</title>
+		<link rel="stylesheet" type="text/css" href="css/verify.css">
+	</head>
+	<body>
+       <div class="huadong"></div>
+       <script type="text/javascript" src="js/jquery.min.js" ></script>
+       <script type="text/javascript" src="js/verify.js" ></script>
+       <script type="text/javascript" src="js/verify.min.js" ></script>
+       <script>
+
+        	$('.huadong').slideVerify({
+		    	type : 2,		//类型
+        		vOffset : 5,	//误差量，根据需求自行调整
+		        vSpace : 5,	//间隔
+		        imgName : ['1.jpg', '2.jpg','3.jpg'],
+		        imgSize : {
+		        	width: '400px',
+		        	height: '200px',
+		        },
+		        blockSize : {
+		        	width: '40px',
+		        	height: '40px',
+		        },
+		        barSize : {
+		        	width : '400px',
+		        	height : '40px',
+		        },
+		        ready : function() {
+		    	},
+		        success : function() {
+		        	window.location.href="login.html";
+		        	return true;
+		        },
+		        error : function() {
+		        	return false;
+		        	window.history.back(-1);
+		        	//$(".huadong").toggle();
+		        }
+		        
+		    });
+    
+		    
+		</script>
+	</body>
+</html>
